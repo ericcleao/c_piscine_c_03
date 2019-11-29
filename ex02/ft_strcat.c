@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecerquei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/28 08:52:51 by ecerquei          #+#    #+#             */
-/*   Updated: 2019/11/29 01:11:20 by ecerquei         ###   ########.fr       */
+/*   Created: 2019/11/28 10:14:30 by ecerquei          #+#    #+#             */
+/*   Updated: 2019/11/28 15:21:22 by ecerquei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strcat(char *dest, char *src)
 {
 	int i;
+	int dest_size;
 
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0')
+	while (dest[i] != '\0')
 	{
-		if (s1[i] < s2[i])
-		{
-			return (-1);
-		}
-		else if (s1[i] > s2[i])
-		{
-			return (1);
-		}
 		i++;
 	}
-	return (0);
+	dest_size = i;
+	while (src[i - dest_size] != '\0')
+	{
+		dest[i] = src[i - dest_size];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
