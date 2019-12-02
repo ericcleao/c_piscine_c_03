@@ -5,25 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecerquei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/28 09:05:11 by ecerquei          #+#    #+#             */
-/*   Updated: 2019/11/28 09:05:28 by ecerquei         ###   ########.fr       */
+/*   Created: 2019/11/30 10:00:39 by ecerquei          #+#    #+#             */
+/*   Updated: 2019/12/02 12:42:24 by ecerquei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i;
+	unsigned int	i;
+	unsigned char	left;
+	unsigned char	right;
 
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-		if (s1[i] < s2[i])
+		left = (unsigned char)s1[i];
+		right = (unsigned char)s2[i];
+		if ((left < right) || (right > left))
 		{
-			return (-1);
-		}
-		else if (s1[i] > s2[i])
-		{
-			return (1);
+			return (left - right);
 		}
 		i++;
 	}
