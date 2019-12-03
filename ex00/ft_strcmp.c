@@ -6,7 +6,7 @@
 /*   By: ecerquei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 08:52:51 by ecerquei          #+#    #+#             */
-/*   Updated: 2019/12/02 12:43:04 by ecerquei         ###   ########.fr       */
+/*   Updated: 2019/12/02 21:38:23 by ecerquei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strcmp(char *s1, char *s2)
 	{
 		left = (unsigned char)s1[i];
 		right = (unsigned char)s2[i];
-		if ((left < right) || (right > left))
+		if ((left < right) || (right < left))
 		{
 			return (left - right);
 		}
